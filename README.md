@@ -15,7 +15,7 @@
 # Build
 1. Clone This Project, Then Open .sln File.
 ```bash
-git clone https://github.com/minexo79/CatFlightGCSNext
+git clone https://github.com/minexo79/CatFlightGCSNext.git
 ```
 2. Right Click Solution Name -> Restore Nuget Package.
 3. Click Build (Green Play Button) / Build Option in Right Click Menu by Solution Name.
