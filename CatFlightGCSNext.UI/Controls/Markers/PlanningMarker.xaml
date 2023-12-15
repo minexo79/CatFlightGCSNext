@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="CatFlightGCSNext.UI.Controls.Markers.PlanningMarker"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CatFlightGCSNext.UI.Controls.Markers"
+             mc:Ignorable="d" 
+             Width="40" Height="40"
+             d:DesignHeight="40" d:DesignWidth="40">
+    <Grid>
+        <Image Name="mark" Source="/Cat Flight GCS Next;component/Resources/mapMarker/marker_planning.png" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Image.Effect>
+                <DropShadowEffect Direction="-90" Color="Black" ShadowDepth="2" BlurRadius="8" />
+            </Image.Effect>
+        </Image>
+        <Label Name="markType" VerticalAlignment="Top" HorizontalAlignment="Center"
+               Foreground="White" FontFamily="Verdana" FontWeight="Bold" FontSize="16">
+            <Label.Effect>
+                <DropShadowEffect Direction="0" Color="White" ShadowDepth="0" BlurRadius="2" />
+            </Label.Effect>
+        </Label>
+    </Grid>
+</UserControl>

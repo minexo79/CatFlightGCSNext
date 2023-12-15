@@ -1,0 +1,75 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>Cat Flight GCS Next</AssemblyName>
+    <ApplicationIcon>Resources\app.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="banner.png" />
+    <None Remove="Resources\app.ico" />
+    <None Remove="Resources\flightHud\compass.png" />
+    <None Remove="Resources\flightHud\flighttimes.png" />
+    <None Remove="Resources\flightHud\hdops.png" />
+    <None Remove="Resources\flightHud\hspeed.png" />
+    <None Remove="Resources\flightHud\vspeed.png" />
+    <None Remove="Resources\mapMarker\marker_guide.png" />
+    <None Remove="Resources\mapMarker\marker_meas.png" />
+    <None Remove="Resources\mapMarker\marker_planning.png" />
+    <None Remove="Resources\flightHud\ampere.png" />
+    <None Remove="Resources\flightHud\battery.png" />
+    <None Remove="Resources\flightHud\distanceflight.png" />
+    <None Remove="Resources\flightHud\distancehome.png" />
+    <None Remove="Resources\flightHud\gpstime.png" />
+    <None Remove="Resources\flightHud\rpm.png" />
+    <None Remove="Resources\flightHud\rssi.png" />
+    <None Remove="Resources\flightHud\satellite.png" />
+    <None Remove="Resources\flightHud\timeflight.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\app.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="GMap.NET.WinPresentation" Version="2.1.7" />
+    <PackageReference Include="Material.Icons.WPF" Version="2.1.0" />
+    <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CatFlightGCSNext.Core\CatFlightGCSNext.Core.csproj" />
+    <ProjectReference Include="..\Thirdparty\NPilotHUD\NPilotHUD.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="banner.png" />
+    <Resource Include="Resources\app.ico" />
+    <Resource Include="Resources\flightHud\compass.png" />
+    <Resource Include="Resources\flightHud\flighttimes.png" />
+    <Resource Include="Resources\flightHud\hdops.png" />
+    <Resource Include="Resources\flightHud\hspeed.png" />
+    <Resource Include="Resources\flightHud\vspeed.png" />
+    <Resource Include="Resources\mapMarker\marker_guide.png" />
+    <Resource Include="Resources\mapMarker\marker_meas.png" />
+    <Resource Include="Resources\mapMarker\marker_planning.png" />
+    <Resource Include="Resources\flightHud\ampere.png" />
+    <Resource Include="Resources\flightHud\battery.png" />
+    <Resource Include="Resources\flightHud\distanceflight.png" />
+    <Resource Include="Resources\flightHud\distancehome.png" />
+    <Resource Include="Resources\flightHud\satellite.png" />
+    <Resource Include="Resources\flightHud\timeflight.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\FlightArmedView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+</Project>

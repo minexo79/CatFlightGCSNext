@@ -1,0 +1,52 @@
+<mxfile host="Electron" modified="2023-08-22T09:11:15.484Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.5.1 Chrome/112.0.5615.204 Electron/24.6.0 Safari/537.36" etag="HhfauXb1dCtIAm-ilmku" version="21.5.1" type="device">
+  <diagram name="Page-1" id="dtt6LzwzctaK0tS8HWYj">
+    <mxGraphModel dx="3545" dy="2050" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="StcxfYDVVX1Y-UlGlIG6-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="44" y="39" width="1080" height="750" as="geometry" />
+        </mxCell>
+        <mxCell id="StcxfYDVVX1Y-UlGlIG6-3" value="UAV HUD" style="text;html=1;strokeColor=#432D57;fillColor=#76608a;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#ffffff;fontSize=16;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="62" y="48" width="336" height="51" as="geometry" />
+        </mxCell>
+        <mxCell id="StcxfYDVVX1Y-UlGlIG6-7" value="選單按鈕" style="text;html=1;strokeColor=#006EAF;fillColor=#1ba1e2;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#ffffff;fontSize=16;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="984" y="48" width="124" height="51" as="geometry" />
+        </mxCell>
+        <mxCell id="StcxfYDVVX1Y-UlGlIG6-8" value="地圖顯示" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;strokeColor=default;" parent="1" vertex="1">
+          <mxGeometry x="62" y="110" width="1046" height="610" as="geometry" />
+        </mxCell>
+        <mxCell id="StcxfYDVVX1Y-UlGlIG6-9" value="飛控下傳資訊" style="text;html=1;strokeColor=#3700CC;fillColor=#6a00ff;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="62" y="730" width="348" height="51" as="geometry" />
+        </mxCell>
+        <mxCell id="StcxfYDVVX1Y-UlGlIG6-10" value="飛機頭像顯示" style="text;html=1;strokeColor=#666666;fillColor=#f5f5f5;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#333333;fontSize=16;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="417" y="110" width="336" height="31" as="geometry" />
+        </mxCell>
+        <mxCell id="StcxfYDVVX1Y-UlGlIG6-4" value="地圖" style="text;html=1;strokeColor=#BD7000;fillColor=#f0a30a;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=16;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="495" y="47" width="90" height="51" as="geometry" />
+        </mxCell>
+        <mxCell id="StcxfYDVVX1Y-UlGlIG6-6" value="設定" style="text;html=1;strokeColor=#B20000;fillColor=#e51400;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#ffffff;fontSize=16;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="585" y="47" width="90" height="51" as="geometry" />
+        </mxCell>
+        <mxCell id="StcxfYDVVX1Y-UlGlIG6-11" value="飛機&lt;br&gt;升速&lt;br&gt;顯示" style="text;html=1;strokeColor=#666666;fillColor=#f5f5f5;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#333333;fontSize=16;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="62" y="294" width="48" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="StcxfYDVVX1Y-UlGlIG6-12" value="地圖功能按鈕" style="text;html=1;strokeColor=#666666;fillColor=#f5f5f5;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#333333;fontSize=16;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="1060" y="294" width="48" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="StcxfYDVVX1Y-UlGlIG6-14" value="飛機座標" style="text;html=1;strokeColor=#3A5431;fillColor=#6d8764;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="881" y="729" width="97" height="51" as="geometry" />
+        </mxCell>
+        <mxCell id="StcxfYDVVX1Y-UlGlIG6-15" value="AHRS" style="text;html=1;strokeColor=#6F0000;fillColor=#a20025;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="978" y="730" width="130" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="StcxfYDVVX1Y-UlGlIG6-16" value="Compass" style="text;html=1;strokeColor=#C73500;fillColor=#fa6800;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="978" y="760" width="130" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="StcxfYDVVX1Y-UlGlIG6-43" value="Cat Flight Open Source Ver." style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
+          <mxGeometry x="44" y="8" width="176" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

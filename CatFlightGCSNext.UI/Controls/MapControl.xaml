@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="CatFlightGCSNext.UI.Controls.MapControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CatFlightGCSNext.UI.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <local:GMap x:Name="map" MaxZoom="20" MinZoom="2" Zoom="8">
+            <local:GMap.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="飛到這裡" />
+                    <MenuItem Header="起飛" />
+                    <MenuItem Header="返回" />
+                    <Separator />
+                    <MenuItem Header="測量距離" Click="MenuItem_Measure_OnClick" />
+                </ContextMenu>
+            </local:GMap.ContextMenu>
+        </local:GMap>
+    </Grid>
+</UserControl>

@@ -1,0 +1,90 @@
+﻿<Window x:Class="CatFlightGCSNext.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CatFlightGCSNext.UI"
+        xmlns:views="clr-namespace:CatFlightGCSNext.UI.Views"
+        xmlns:control="clr-namespace:CatFlightGCSNext.UI.Controls"
+        xmlns:toolbar="clr-namespace:CatFlightGCSNext.UI.Controls.Toolbar"
+        xmlns:materialIcons="clr-namespace:Material.Icons.WPF;assembly=Material.Icons.WPF"
+        mc:Ignorable="d"
+        Style="{StaticResource CustomWindowStyle}"
+        FontSize="12" FontFamily="Microsoft JhengHei UI" WindowStartupLocation="CenterScreen" WindowState="Maximized"
+        Title="Cat Flight GCS Next" MinHeight="800" MinWidth="1280">
+    <Canvas>
+        <StackPanel Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Canvas}}, Path=ActualWidth}"
+            Orientation="Horizontal" VerticalAlignment="Top" Style="{StaticResource GradientPanelVertical}" Panel.ZIndex="1">
+            <!-- Menu & Toolbar Button -->
+            <Menu VerticalAlignment="Center">
+                <MenuItem Header="顯示">
+                    <MenuItem Header="數據顯示">
+                        <MenuItem Header="偏航角度" IsCheckable="True" IsChecked="{Binding hudVisible.compassVisible}" />
+                        <MenuItem Header="衛星狀態" IsCheckable="True" IsChecked="{Binding hudVisible.satelliteVisible}" />
+                        <MenuItem Header="能源消耗" IsCheckable="True" IsChecked="{Binding hudVisible.energyVisible}" />
+                        <MenuItem Header="航行速度" IsCheckable="True" IsChecked="{Binding hudVisible.flightSpeedVisible}" />
+                        <MenuItem Header="飛行資訊" IsCheckable="True" IsChecked="{Binding hudVisible.flightInfoVisible}" />
+                    </MenuItem>
+                    <MenuItem Header="飛行姿態儀" IsCheckable="True" IsChecked="{Binding hudVisible.pilotHudVisible}" />
+                    <Separator />
+                    <MenuItem Header="航圖切換">
+                        <MenuItem Header="Google Map 一般" x:Name="map_Google_Default" Click="mapChange_Click" />
+                        <MenuItem Header="Google Map 地理" x:Name="map_Google_Terrain" Click="mapChange_Click" />
+                        <MenuItem Header="Google Map 衛星" x:Name="map_Google_Satellite" Click="mapChange_Click" />
+                        <MenuItem Header="Google Map 混合" x:Name="map_Google_Hybird" Click="mapChange_Click" />
+                        <Separator />
+                        <MenuItem Header="Bing Map 一般" x:Name="map_Bing_Default" Click="mapChange_Click" />
+                        <MenuItem Header="Bing Map 衛星" x:Name="map_Bing_Satellite" Click="mapChange_Click" />
+                        <MenuItem Header="Bing Map 混合" x:Name="map_Bing_Hybrid" Click="mapChange_Click" />
+                        <Separator />
+                        <MenuItem Header="OpenStreetMap 一般" x:Name="map_OSM_Default" Click="mapChange_Click" />
+                    </MenuItem>
+                    <MenuItem Header="飛行數據圖" />
+                    <MenuItem Header="飛控訊息" />
+                </MenuItem>
+                <MenuItem Header="幫助">
+                    <MenuItem Header="關於..." Click="help_Click" />
+                    <Separator />
+                    <MenuItem Header="開啟本專案 Github" />
+                    <MenuItem Header="開啟本專案 HackMD" />
+                </MenuItem>
+            </Menu>
+            <Button Content="{materialIcons:MaterialIconExt Kind=Connection, Size=42}" Margin="4"
+                    Background="Transparent" BorderThickness="0" ToolTip="連線至飛機" />
+            <Button Content="{materialIcons:MaterialIconExt Kind=Map, Size=42}" Margin="4"
+                    Background="Transparent" BorderThickness="0" ToolTip="航線規劃" />
+            <Button Content="{materialIcons:MaterialIconExt Kind=Navigation, Size=42}" Margin="4" Foreground="YellowGreen"
+                    Background="Transparent" BorderThickness="0" ToolTip="飛機置中" />
+            <Button Content="{materialIcons:MaterialIconExt Kind=Settings, Size=42}" Margin="4" Foreground="CadetBlue"
+                    Background="Transparent" BorderThickness="0" ToolTip="軟體設定" />
+            <Image Width="8" />
+            <toolbar:ConnectToolbar />
+        </StackPanel>
+        <!-- Flight Mode & Armed Status & Message Received Percent -->
+        <StackPanel Panel.ZIndex="1" Canvas.Top="4" Canvas.Right="4" Orientation="Horizontal">
+            <views:FlightModeView x:Name="flightModeView" 
+                                  Background="Transparent" BorderThickness="0" />
+            <views:FlightArmedView x:Name="flightArmedView" 
+                                   Background="Transparent" BorderThickness="0" />
+            <Image Width="8" />
+            <Button Background="Transparent" BorderThickness="0"
+                Content="{materialIcons:MaterialIconExt Kind=WifiStrengthOff,Size=42}" />
+        </StackPanel>
+        <!-- HUD & Map -->
+        <control:HudControl x:Name="hudControl" Width="410" Height="Auto" Canvas.Right="10" Canvas.Top="60" Panel.ZIndex="1" />
+        <control:MapControl x:Name="mapControl" Panel.ZIndex="0" 
+                            Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Canvas}}, Path=ActualWidth}" 
+                            Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Canvas}}, Path=ActualHeight}" />
+        <!-- Heading Tooltip & Drone Location -->
+        <StatusBar Canvas.Bottom="0" 
+                   Width="Auto" 
+                   Height="Auto" Panel.ZIndex="1">
+            <TextBlock FontSize="14" FontFamily="Microsoft JhengHei UI" Padding="5, 0, 5, 0" 
+                       Background="Red" Text="Current Heading" />
+            <TextBlock FontSize="14" FontFamily="Microsoft JhengHei UI" Padding="5, 0, 5, 0" Foreground="Black"
+                       Background="Orange" Text="Target Heading" />
+            <Separator />
+            <TextBlock FontSize="14" FontFamily="Microsoft JhengHei UI" x:Name="dronePoint" Text="{Binding droneLocation}" />
+        </StatusBar>
+    </Canvas>
+</Window>
