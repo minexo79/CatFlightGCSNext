@@ -27,6 +27,7 @@ namespace CatFlightGCSNext.UI.Controls
     public partial class MapControl : UserControl
     {
         public int zoomLevel { get => (int)map.Zoom; set => map.Zoom = value; }
+        public bool isRanging = false;
 
         public MapControl()
         {
@@ -112,6 +113,25 @@ namespace CatFlightGCSNext.UI.Controls
             map.Manager.CancelTileCaching();                            // Close Map Caching
         }
 
+        public void ChangeMapMenu(int index)
+        {
+            mapMenu.Items.Clear();
+
+            switch(index)
+            {
+                case 0:
+                    mapMenu.Items.Add(new MenuItem() { Header = "飛到這裡" });
+                    mapMenu.Items.Add(new MenuItem() { Header = "起飛" });
+                    mapMenu.Items.Add(new MenuItem() { Header = "降落" });
+                    break;
+                case 1:
+                    mapMenu.Items.Add(new MenuItem() { Header = "刪除航點" });
+                    mapMenu.Items.Add(new MenuItem() { Header = "插入航點" });
+                    mapMenu.Items.Add(new MenuItem() { Header = "計算SRTM" });
+                    break;
+            }
+        }
+
         /// Measurement Area
         /// ============================================================================================================
         List<GMapMarker> measMarker = new List<GMapMarker>();
@@ -120,33 +140,26 @@ namespace CatFlightGCSNext.UI.Controls
         /// <summary>
         /// Measure The Distane Between A And B Position
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void MenuItem_Measure_OnClick(object sender, RoutedEventArgs e)
+        public void Measure_Distance()
         {
             // Clear All Markers On Map
             map.Markers.Clear();
             measMarker.Clear();
             measRoute?.Clear();
 
-            // Binding A Event That Set A Start Position To Measure The Distance 
-            map.MouseDown += Map_Measure_MouseDown;
+            if (!isRanging)
+                // Binding A Event That Set A Start Position To Measure The Distance 
+                map.MouseDown += Map_Measure_MouseDown;
+            else
+                // Debinding Measurement Event
+                map.MouseDown -= Map_Measure_MouseDown;
+
+            isRanging = !isRanging;
         }
 
 
         private void Map_Measure_MouseDown(object sender, MouseEventArgs e)
         {
-            if (e.RightButton == MouseButtonState.Pressed)
-            {
-                // Clear All Markers On Map
-                map.Markers.Clear();
-                measMarker.Clear();
-                measRoute?.Clear();
-
-                // Debinding Measurement Event
-                map.MouseDown -= Map_Measure_MouseDown;
-            }
-
             if (e.LeftButton == MouseButtonState.Pressed)
             {
                 if (map.Markers.Count > 2)      // > 2 Point: Clear All Markers On Map
@@ -175,7 +188,7 @@ namespace CatFlightGCSNext.UI.Controls
                     GMapMarker marker1 = new GMapMarker(mapPos);
                     {
                         marker1.Shape = new MeasureMarker(this, marker1, false, $"經度：{_lng}\n緯度：{_lat}");
-                        marker1.ZIndex = 0;
+                        marker1.ZIndex = 99;
                         marker1.Offset = new Point(-20, -40);
                         marker1.Position = mapPos;
                     }
@@ -205,7 +218,7 @@ namespace CatFlightGCSNext.UI.Controls
                             $"經度：{_lng}\n" +
                             $"緯度：{_lat}\n" +
                             $"距離：{distance:F2} M / {(distance/1000):F2} KM");
-                        marker2.ZIndex = 0;
+                        marker2.ZIndex = 99;
                         marker2.Offset = new Point(-20, -40);
                         marker2.Position = mapPos;
                     }

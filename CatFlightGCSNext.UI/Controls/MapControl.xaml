@@ -9,12 +9,7 @@
     <Grid>
         <local:GMap x:Name="map" MaxZoom="20" MinZoom="2" Zoom="8">
             <local:GMap.ContextMenu>
-                <ContextMenu>
-                    <MenuItem Header="飛到這裡" />
-                    <MenuItem Header="起飛" />
-                    <MenuItem Header="返回" />
-                    <Separator />
-                    <MenuItem Header="測量距離" Click="MenuItem_Measure_OnClick" />
+                <ContextMenu Name="mapMenu">
                 </ContextMenu>
             </local:GMap.ContextMenu>
         </local:GMap>

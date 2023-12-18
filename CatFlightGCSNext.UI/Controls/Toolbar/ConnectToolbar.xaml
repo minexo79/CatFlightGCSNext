@@ -19,6 +19,6 @@
             <ComboBoxItem Content="460800" />
             <ComboBoxItem Content="921600" />
         </ComboBox>
-        <Button x:Name="btnConnect" Width="80" Margin="4" Content="連線" FontSize="20" />
+        <Button x:Name="btnConnect" Width="80" Margin="4" Content="連線" FontSize="20" Click="btnConnect_Click" />
     </StackPanel>
 </UserControl>

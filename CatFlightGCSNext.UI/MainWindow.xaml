@@ -49,16 +49,25 @@
                     <MenuItem Header="開啟本專案 HackMD" />
                 </MenuItem>
             </Menu>
-            <Button Content="{materialIcons:MaterialIconExt Kind=Connection, Size=42}" Margin="4"
-                    Background="Transparent" BorderThickness="0" ToolTip="連線至飛機" />
-            <Button Content="{materialIcons:MaterialIconExt Kind=Map, Size=42}" Margin="4"
-                    Background="Transparent" BorderThickness="0" ToolTip="航線規劃" />
+            <Button x:Name="btnConnect" Content="{materialIcons:MaterialIconExt Kind=Connection, Size=42}" Margin="4"
+                    Background="Transparent" BorderThickness="0" ToolTip="連線至飛機"
+                    Click="btnConnect_Click" />
+            <Button x:Name="btnPlanning" Content="{materialIcons:MaterialIconExt Kind=Map, Size=42}" Margin="4"
+                    Background="Transparent" BorderThickness="0" ToolTip="航線/航區規劃"
+                    Click="btnPlanning_Click" />
             <Button Content="{materialIcons:MaterialIconExt Kind=Navigation, Size=42}" Margin="4" Foreground="YellowGreen"
                     Background="Transparent" BorderThickness="0" ToolTip="飛機置中" />
             <Button Content="{materialIcons:MaterialIconExt Kind=Settings, Size=42}" Margin="4" Foreground="CadetBlue"
                     Background="Transparent" BorderThickness="0" ToolTip="軟體設定" />
             <Image Width="8" />
-            <toolbar:ConnectToolbar />
+            <Grid x:Name="toolbars">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="0" />
+                </Grid.ColumnDefinitions>
+                <toolbar:ConnectToolbar x:Name="connectToolbar" Grid.Column="0" />
+                <toolbar:PlanningToolbar x:Name="planningToolbar" Grid.Column="1" />
+            </Grid>
         </StackPanel>
         <!-- Flight Mode & Armed Status & Message Received Percent -->
         <StackPanel Panel.ZIndex="1" Canvas.Top="4" Canvas.Right="4" Orientation="Horizontal">

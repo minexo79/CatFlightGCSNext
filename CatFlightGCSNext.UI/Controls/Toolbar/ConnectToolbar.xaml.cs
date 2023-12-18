@@ -37,5 +37,22 @@ namespace CatFlightGCSNext.UI.Controls.Toolbar
 
             cbComport.SelectedIndex = 0;
         }
+
+        private void btnConnect_Click(object sender, RoutedEventArgs e)
+        {
+            if (FlightData.connection != null)
+            {
+                if (FlightData.connection.IsOpened())
+                {
+                    // TODO: Complete Disconnect Event
+                    btnConnect.Dispatcher.Invoke(delegate { btnConnect.Content = "連線"; });
+                }
+            }
+            else
+            {
+                // TODO: Complete Connect Event
+                btnConnect.Dispatcher.Invoke(delegate { btnConnect.Content = "斷線"; });
+            }
+        }
     }
 }

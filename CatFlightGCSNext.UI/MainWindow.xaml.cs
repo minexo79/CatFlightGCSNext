@@ -9,7 +9,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using static CatFlightGCSNext.UI.Controls.HudControl;
+using CatFlightGCSNext.Core;
 
 namespace CatFlightGCSNext.UI
 {
@@ -36,6 +36,8 @@ namespace CatFlightGCSNext.UI
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             mapControl.InitializeMap(9);
+
+            planningToolbar.OnRangeButtonClick += PlanningToolbar_OnRangeButtonClick;   // Ranging / Measure Distance
         }
 
         private void MainWindow_Closing(object? sender, System.ComponentModel.CancelEventArgs e)
@@ -54,6 +56,32 @@ namespace CatFlightGCSNext.UI
         {
             HelpWindow help = new HelpWindow();
             help.Show();
+        }
+
+        private void btnConnect_Click(object sender, RoutedEventArgs e)
+        {
+            // Show Connect Toolbar
+            toolbars.ColumnDefinitions[0].Width = new GridLength(1, GridUnitType.Star);
+            toolbars.ColumnDefinitions[1].Width = new GridLength(0);
+
+            mapControl.ChangeMapMenu(0);
+        }
+
+        private void btnPlanning_Click(object sender, RoutedEventArgs e)
+        {
+            // Show Planning Toolbar
+            toolbars.ColumnDefinitions[0].Width = new GridLength(0);
+            toolbars.ColumnDefinitions[1].Width = new GridLength(1, GridUnitType.Star);
+
+            mapControl.ChangeMapMenu(1);
+        }
+
+        /// <summary>
+        /// Open / Close Ranging
+        /// </summary>
+        private void PlanningToolbar_OnRangeButtonClick(object? sender, EventArgs e)
+        {
+            mapControl.Measure_Distance();
         }
     }
 }

@@ -51,7 +51,7 @@ namespace CatFlightGCSNext.Core.Connect
 
         public bool IsOpened()
         {
-            return BasePort.IsOpen;
+            return (BasePort != null) ? BasePort.IsOpen : false;
         }
 
         public string[] GetPortList()
