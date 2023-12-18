@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace CatFlightGCSNext.Core.FlightControllerConnection
+namespace CatFlightGCSNext.Core.Connect
 {
-    public interface IFlightControllerConnection
+    public interface IConnection
     {
         string[] GetPortList();
         void Open();
         void Close();
+        bool IsOpened();
         void Dispose();
         int Read(byte[] buffer, int offset, int count);
         void Write(byte[] buffer, int offset, int count);

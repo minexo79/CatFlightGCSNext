@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.IO.Ports;
 
-namespace CatFlightGCSNext.Core.FlightControllerConnection
+namespace CatFlightGCSNext.Core.Connect
 {
-    public class SerialConnection : IFlightControllerConnection
+    public class SerialConnection : IConnection
     {
         SerialPort BasePort;
         public Stream BaseStream => BasePort.BaseStream;
@@ -47,6 +47,11 @@ namespace CatFlightGCSNext.Core.FlightControllerConnection
         public void Write(byte[] buffer, int offset, int count)
         {
             BaseStream.Write(buffer, offset, count);
+        }
+
+        public bool IsOpened()
+        {
+            return BasePort.IsOpen;
         }
 
         public string[] GetPortList()

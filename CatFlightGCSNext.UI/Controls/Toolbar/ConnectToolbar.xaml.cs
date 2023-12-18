@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CatFlightGCSNext.Core;
 
 namespace CatFlightGCSNext.UI.Controls.Toolbar
 {
@@ -28,6 +29,11 @@ namespace CatFlightGCSNext.UI.Controls.Toolbar
         private void cbComport_DropDownOpened(object sender, EventArgs e)
         {
             cbComport.Items.Clear();
+
+            foreach (string port in FlightData.connection.GetPortList())
+            {
+                cbComport.Items.Add(port);
+            }
 
             cbComport.SelectedIndex = 0;
         }

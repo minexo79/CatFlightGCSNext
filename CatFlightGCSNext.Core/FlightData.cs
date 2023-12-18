@@ -1,17 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using CatFlightGCSNext.Core.FlightControllerConnection
+using CatFlightGCSNext.Core.Connect;
+using CatFlightGCSNext.Core.Utils;
 
 namespace CatFlightGCSNext.Core
 {
     public class FlightData
     {
-        private IFlightControllerConnection connection = null;
+        public static IConnection connection = null;
 
-        public FlightData()
+        ConnType connType = ConnType.Unknown;
+
+        public FlightData(ConnType _type)
         {
-            connection = new SerialConnection("COM3", 115200);
+            connType = _type;
         }
     }
 }

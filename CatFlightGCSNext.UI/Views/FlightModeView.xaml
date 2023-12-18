@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="64">
     <StackPanel Orientation="Horizontal">
-        <TextBlock FontSize="20" FontWeight="Bold" Text="未知"
+        <TextBlock FontSize="20" FontWeight="Bold" Text="未知" x:Name="txtFlightMode"
                    HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10, 0, 10, 0" />
     </StackPanel>
 </UserControl>
