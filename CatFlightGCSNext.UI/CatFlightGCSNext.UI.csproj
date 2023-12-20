@@ -37,6 +37,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="GMap.NET.Core" Version="2.1.7" />
     <PackageReference Include="GMap.NET.WinPresentation" Version="2.1.7" />
     <PackageReference Include="Material.Icons.WPF" Version="2.1.0" />
     <PackageReference Include="System.Drawing.Common" Version="6.0.0" />

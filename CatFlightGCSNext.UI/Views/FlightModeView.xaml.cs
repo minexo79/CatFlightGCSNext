@@ -34,7 +34,7 @@ namespace CatFlightGCSNext.UI.Views
                 {
                     if (_flightMode >= 0 && _flightMode < FlightParameters.FlightMode.Length)
                         txtFlightMode.Text = FlightParameters.FlightMode[_flightMode];
-                    else 
+                    else
                         txtFlightMode.Text = "未知";
                 });
             }

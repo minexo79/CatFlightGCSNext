@@ -40,7 +40,7 @@
                         <MenuItem Header="OpenStreetMap 一般" x:Name="map_OSM_Default" Click="mapChange_Click" />
                     </MenuItem>
                     <MenuItem Header="飛行數據圖" />
-                    <MenuItem Header="飛控訊息" />
+                    <MenuItem Header="飛控訊息" IsCheckable="True" IsChecked="{Binding hudVisible.flightLogVisible}" />
                 </MenuItem>
                 <MenuItem Header="幫助">
                     <MenuItem Header="關於..." Click="help_Click" />

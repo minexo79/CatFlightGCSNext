@@ -13,7 +13,7 @@
     <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="6" >
         <pilotHud:NHudControl x:Name="pilotHudView"
                               Width="390" Height="390" />
-        <views:FlightMessageView Width="390" Height="42" />
+        <views:FlightLogView x:Name="flightLogView" Width="390" />
         <views:FlightHudView x:Name="compassView" 
                              Width="130" Height="64" 
                              _hudType="偏航角度" _hudImage="iconCompass" />

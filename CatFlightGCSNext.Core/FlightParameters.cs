@@ -6,33 +6,11 @@ namespace CatFlightGCSNext.Core
 {
     public class FlightParameters
     {
-        public static string[] FlightMode =
+        public static string[]? FlightMode { get; set; }
+
+        public static void Init()
         {
-            "Stabilize",    // 0
-            "Acro",
-            "AltHold",
-            "Auto",
-            "Guided",
-            "Loiter",
-            "RTL",
-            "Circle",
-            "Land",
-            "Drift",
-            "Sport",
-            "Flip",
-            "AutoTune",
-            "PosHold",
-            "Brake",
-            "Throw",
-            "Avoid_ADSB",
-            "Guided_NoGPS",
-            "Smart_RTL",
-            "FlowHold",
-            "Follow",
-            "ZigZag",
-            "SystemID",
-            "Heli_Automate",
-            "Auto RTL"
-        };
+            FlightMode = Utils.YamlReader.ReadArray("FlightParameters.yaml", "FlightMode");
+        }
     }
 }

@@ -25,9 +25,12 @@ namespace CatFlightGCSNext.UI
         public MainWindow()
         {
             InitializeComponent();
-            this.DataContext = this;            // Set Data Binding To This Class
+            this.DataContext = this;                // Set Data Binding To This Class
 
-            hudVisible = hudControl.hudVisible; // Binding Exist Hud On XAML
+            // Load Config & Parameters
+            FlightParameters.Init();
+
+            hudVisible = hudControl.hudVisible;     // Binding Exist Hud On XAML
 
             this.Loaded += MainWindow_Loaded;
             this.Closing += MainWindow_Closing;

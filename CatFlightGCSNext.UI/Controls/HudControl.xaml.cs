@@ -111,6 +111,20 @@ namespace CatFlightGCSNext.UI.Controls
                 }
             }
 
+            private bool _flightLogVisible = false;
+            /// <summary>
+            /// Flight Log Visible
+            /// </summary>
+            public bool flightLogVisible
+            {
+                get => _flightLogVisible;
+                set
+                {
+                    _flightLogVisible = value;
+                    OnPropertyChanged(nameof(flightLogVisible));
+                }
+            }
+
             /// <summary>
             /// Event Handler On Property Changed
             /// </summary>
@@ -121,7 +135,6 @@ namespace CatFlightGCSNext.UI.Controls
 
             }
         }
-
         public HudVisible hudVisible { get; set; } = new HudVisible();
 
         public HudControl()
@@ -160,6 +173,10 @@ namespace CatFlightGCSNext.UI.Controls
             {
                 flightDistView.Visibility   = hudVisible.flightInfoVisible ? Visibility.Visible : Visibility.Collapsed;
                 homeDistView.Visibility     = hudVisible.flightInfoVisible ? Visibility.Visible : Visibility.Collapsed;
+            }
+            else if (e.PropertyName == "flightLogVisible")
+            {
+                flightLogView.ChangeFlightLogView(hudVisible.flightLogVisible ? Visibility.Visible : Visibility.Collapsed);
             }
             else
             {

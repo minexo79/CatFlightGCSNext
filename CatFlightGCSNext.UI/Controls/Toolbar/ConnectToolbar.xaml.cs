@@ -30,7 +30,7 @@ namespace CatFlightGCSNext.UI.Controls.Toolbar
         {
             cbComport.Items.Clear();
 
-            foreach (string port in FlightData.connection.GetPortList())
+            foreach (string port in Core.Connect.SerialConnection.GetPortList())
             {
                 cbComport.Items.Add(port);
             }

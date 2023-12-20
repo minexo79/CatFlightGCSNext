@@ -7,7 +7,6 @@ namespace CatFlightGCSNext.Core.Connect
 {
     public interface IConnection
     {
-        string[] GetPortList();
         void Open();
         void Close();
         bool IsOpened();
