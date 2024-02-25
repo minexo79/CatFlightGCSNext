@@ -14,7 +14,7 @@
             </Image.Effect>
         </Image>
         <Label Name="markType" VerticalAlignment="Top" HorizontalAlignment="Center"
-               Foreground="White" FontFamily="Verdana" FontWeight="Bold" FontSize="16">
+               Foreground="Black" FontFamily="Verdana" FontWeight="Bold" FontSize="16">
             <Label.Effect>
                 <DropShadowEffect Direction="0" Color="White" ShadowDepth="0" BlurRadius="2" />
             </Label.Effect>

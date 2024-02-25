@@ -28,7 +28,8 @@ namespace CatFlightGCSNext.UI.Controls
     public partial class MapControl : UserControl
     {
         public int zoomLevel { get => (int)map.Zoom; set => map.Zoom = value; }
-        public bool isRanging = false;
+        public bool isRanging       = false;
+        public bool isLinePlanning  = false;
 
         public MapControl()
         {
@@ -224,5 +225,35 @@ namespace CatFlightGCSNext.UI.Controls
                 }
             }
         }
+
+        // Planning Area
+        // ============================================================================================================
+        
+        /// <summary>
+        /// Flight Line Plan
+        /// </summary>
+        void FlightLine_Planning()
+        {
+            // Clear All Markers On Map
+            map.Markers.Clear();
+            measMarker.Clear();
+            measRoute?.Clear();
+
+            if (!isLinePlanning)
+                // Binding A Event That Set A Start Position To Measure The Distance 
+                map.MouseDown += Map_LinePlanning_MouseDown;
+            else
+                // Debinding Measurement Event
+                map.MouseDown -= Map_LinePlanning_MouseDown;
+
+            isRanging = !isRanging;
+        }
+
+        private void Map_LinePlanning_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+
+            }
     }
 }
