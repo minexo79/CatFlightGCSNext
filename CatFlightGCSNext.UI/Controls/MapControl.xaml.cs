@@ -255,5 +255,6 @@ namespace CatFlightGCSNext.UI.Controls
             {
 
             }
+        }
     }
 }
