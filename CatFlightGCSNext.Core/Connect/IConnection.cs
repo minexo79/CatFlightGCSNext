@@ -11,7 +11,7 @@ namespace CatFlightGCSNext.Core.Connect
         void Close();
         bool IsOpened();
         void Dispose();
-        int Read(byte[] buffer, int offset, int count);
-        void Write(byte[] buffer, int offset, int count);
+        byte[] Read();
+        void Write(byte[] buffer, int count);
     }
 }
